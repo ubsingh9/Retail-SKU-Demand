@@ -1,0 +1,15 @@
+pandas
+langchain
+langchain-community
+openai
+faiss-cpu
+tiktoken
+PyPDF2
+python-dotenv
+gradio
+pymupdf
+sentence-transformers
+streamlit
+langchain-groq
+sentence-transformers
+langchain_huggingface
