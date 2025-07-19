@@ -10,7 +10,7 @@ def generate_embeddings(file_path):
     print(f'inside generate embeddings')
     chunks = load_and_chunk_csv(file_path)
     print(f'chunking is done')
-    chunks=chunks[:40000]
+    chunks=chunks[:50000]
     
 
     # initialized embedding models
