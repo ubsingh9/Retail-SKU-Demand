@@ -10,6 +10,5 @@ gradio
 pymupdf
 sentence-transformers
 streamlit
-langchain-groq
-sentence-transformers
 langchain_huggingface
+matplotlib
