@@ -6,9 +6,9 @@ from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 load_dotenv()
 import streamlit as st
-#GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
-#os.environ["GROQ_API_KEY"] = GROQ_API_KEY
-os.environ["GROQ_API_KEY"]=os.getenv("GROQ_API_KEY")
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+os.environ["GROQ_API_KEY"] = GROQ_API_KEY
+#os.environ["GROQ_API_KEY"]=os.getenv("GROQ_API_KEY")
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from tools.plot_sales_tools import plot_sales_trend
