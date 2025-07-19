@@ -24,18 +24,27 @@ def get_qa_chain():
 
     llm=ChatGroq(groq_api_key=os.getenv("GROQ_API_KEY"), model="llama-3.1-8b-instant", temperature=0.2)
 
-    prompt_template = """
-    You are a demand planning expert assistant. Based on the context from retail sales and inventory data,
-    answer the user query in a professional, analytical way. If relevant, return structured output (e.g., markdown table or list).
+    prompt_template = PromptTemplate(
+    input_variables=["context", "question"],
+    template="""
+    You are a Expert AI Retail Analytics Assistant.
 
-    CONTEXT:
+    Use the following context to answer the question. Be concise and accurate.
+
+    Always format the output based on the query intent:
+    - If the question asks for SKUs, sales numbers, or regions → return a markdown table.
+    - If asking for recommendations or reasons → return a bullet list.
+    - Keep the tone business-friendly targing to retail expert, and avoid hallucination.
+
+    Context:
     {context}
 
-    QUESTION:
+    Question:
     {question}
 
     Helpful Answer:
     """
+    )
     prompt = PromptTemplate(
         input_variables=["context", "question"],
         template=prompt_template
