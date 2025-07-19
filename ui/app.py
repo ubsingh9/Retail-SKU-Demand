@@ -5,7 +5,7 @@ import streamlit as st
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from src.chart_tool import plot_sales_trend
 from src.query_chain import get_qa_chain
-
+from src.agent_chain import agent_executer
 st.set_page_config(page_title="Retail Q&A Assistant", layout="wide")
 
 st.title("Retail SKU Demand Demand Assistant")
